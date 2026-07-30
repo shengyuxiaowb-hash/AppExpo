@@ -6,16 +6,27 @@ AppExpo 是一个用于查看 Apple Store 展位、同步本地历史记录、�
 
 ## 1. 快速启动提示
 
-如果是把项目交给 Codex 启动，需要把下面两个内容一起交给 Codex：
+新电脑现在不需要手动拷贝整个项目文件夹。直接把 GitHub 仓库地址发给 Codex，让 Codex 拉取项目并启动即可。
 
-- **AppExpo 项目文件夹**
-- **AppExpo_给Codex的启动交接.md**
+首次安装时，把下面这段发给 Codex：
 
-可以像下面这样，把启动交接文件和项目文件夹一起放到 Codex 输入框中：
+```text
+安装项目
 
-![把启动交接文件和项目文件夹一起交给 Codex](assets/appexpo-guide/codex-handoff-files.png)
+仓库：git@github.com:shengyuxiaowb-hash/AppExpo.git
+拉到 ~/Desktop/AppExpo，首次拉取保留仓库里的 data/appexpo_local.db。
+拉完后先阅读项目根目录的 AppExpo_给Codex的启动交接.md，然后启动项目。
+```
 
-然后在 Codex 中输入：
+如果新电脑还没有配置 SSH，也可以让 Codex 使用 HTTPS 地址：
+
+```text
+https://github.com/shengyuxiaowb-hash/AppExpo.git
+```
+
+项目首次拉取后，会同时带上 GitHub 中的 `data/appexpo_local.db`，所以首次安装不需要单独更新数据库。
+
+项目已经在电脑上时，日常启动只需要输入：
 
 ```text
 启动项目
@@ -31,6 +42,30 @@ http://localhost:4173
 
 ```text
 关闭项目
+```
+
+### 常用 Codex 指令
+
+| 指令 | 用途 | 是否覆盖数据库 |
+| --- | --- | --- |
+| `安装项目` | 新电脑首次从 GitHub 拉取项目，并启动 | 会拉取 GitHub 自带数据库 |
+| `启动项目` | 启动本地 AppExpo 服务 | 不影响数据库 |
+| `关闭项目` | 关闭 `4173` 端口上的 AppExpo 服务 | 不影响数据库 |
+| `更新项目` | 只更新代码、页面、文档、skill | 不覆盖本机数据库 |
+| `更新数据库` | 只用 GitHub 数据库替换本机数据库 | 会覆盖，覆盖前会备份 |
+
+推荐日常更新使用：
+
+```text
+更新项目
+启动项目
+```
+
+只有明确需要同步主电脑数据库时，才使用：
+
+```text
+更新数据库
+启动项目
 ```
 
 ---
