@@ -60,6 +60,11 @@ npm start
 
 Codex 会从 GitHub 拉取项目到 `~/Desktop/AppExpo`，检查 Python 环境，并启动本地服务。
 
+首次拉取项目时，GitHub 中的 `data/appexpo_local.db` 会一起下载到新电脑，所以新电脑首次安装后会自带一份数据库。后续更新才区分为：
+
+- `更新项目`：只更新代码，不覆盖当前电脑数据库。
+- `更新数据库`：单独用 GitHub 数据库覆盖当前电脑数据库。
+
 项目仓库：
 
 ```text

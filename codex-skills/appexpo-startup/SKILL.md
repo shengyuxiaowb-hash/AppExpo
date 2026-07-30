@@ -21,7 +21,7 @@ Install or start the AppExpo local web app and give the user:
 http://localhost:4173
 ```
 
-On a new computer, the user no longer needs to provide the whole `AppExpo` folder. The handoff document plus the GitHub repository URL/access is enough. Clone the repository to `~/Desktop/AppExpo`, then start it.
+On a new computer, the user no longer needs to provide the whole `AppExpo` folder. The handoff document plus the GitHub repository URL/access is enough. Clone the repository to `~/Desktop/AppExpo`, then start it. The first clone includes the GitHub copy of `data/appexpo_local.db`.
 
 If the user only asks to install, start, or use the project, do not edit business code.
 
@@ -103,6 +103,11 @@ If npm is missing, use `python3 server.py`; npm is not required for basic startu
 ## GitHub Install And Update
 
 This project is designed so the main computer pushes updates to GitHub and other computers install or update from GitHub. A new MacBook only needs the handoff document plus GitHub repository access; copying the whole project folder is not required.
+
+First install pulls the project files and `data/appexpo_local.db` together. After that:
+
+- `更新项目` updates code/files but keeps this computer's current database.
+- `更新数据库` deliberately replaces this computer's database with the GitHub database.
 
 Repository:
 

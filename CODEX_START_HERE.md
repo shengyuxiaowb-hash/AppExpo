@@ -12,7 +12,7 @@ If the user only provides the external handoff document and the GitHub repositor
 
 User command mapping:
 
-- `安装项目`: clone AppExpo from GitHub to `~/Desktop/AppExpo`, read `codex-skills/appexpo-startup/SKILL.md`, then start it.
+- `安装项目`: clone AppExpo from GitHub to `~/Desktop/AppExpo`; the first clone includes `data/appexpo_local.db`. Then read `codex-skills/appexpo-startup/SKILL.md` and start it.
 - `启动项目`: read `codex-skills/appexpo-startup/SKILL.md`, then start this AppExpo project and make it available at `http://localhost:4173`.
 - `关闭项目`: read `codex-skills/appexpo-startup/SKILL.md`, then stop the AppExpo process listening on port `4173`.
 - `更新项目`: pull/update project files from GitHub, but keep this computer's current `data/appexpo_local.db`.
@@ -27,6 +27,7 @@ Important:
 - Realtime analysis does not need an API key or account. It uses the local `server.py` to read App Store public page/catalog data, so the Mac only needs network access.
 - GitHub repository: `git@github.com:shengyuxiaowb-hash/AppExpo.git`.
 - New computer handoff: provide only the handoff document plus GitHub repository access. Codex can install from GitHub; copying the whole project folder is optional fallback, not the normal path.
+- First install pulls both project files and the GitHub copy of `data/appexpo_local.db`. Later, `更新项目` preserves the local database; `更新数据库` intentionally replaces it.
 - The main computer pushes updates. Other computers should normally use `更新项目`; use `更新数据库` only when the user explicitly wants to overwrite the local database with the GitHub database.
 
 Suggested user prompt:
