@@ -10,6 +10,14 @@ After AppExpo is cloned or copied to a new MacBook, Codex should first read that
 
 If the user only provides the external handoff document and the GitHub repository, Codex should clone the repository first. The whole `AppExpo` folder does not need to be manually copied to a new computer.
 
+The repository also includes:
+
+```text
+AppExpo_给Codex的启动交接.md
+```
+
+After cloning, Codex can read that handoff document from the project root for the full Chinese startup and maintenance workflow.
+
 User command mapping:
 
 - `安装项目`: clone AppExpo from GitHub to `~/Desktop/AppExpo`; the first clone includes `data/appexpo_local.db`. Then read `codex-skills/appexpo-startup/SKILL.md` and start it.

@@ -49,7 +49,6 @@ npm start
 
 新电脑现在不需要手动拷贝整个 `AppExpo` 项目文件夹。推荐只给 Codex：
 
-- `AppExpo_给Codex的启动交接.md`
 - GitHub 仓库地址和访问权限
 
 然后让 Codex 执行：
@@ -59,6 +58,8 @@ npm start
 ```
 
 Codex 会从 GitHub 拉取项目到 `~/Desktop/AppExpo`，检查 Python 环境，并启动本地服务。
+
+项目拉取完成后，根目录里自带 `AppExpo_给Codex的启动交接.md`，新电脑上的 Codex 可以继续读取这份交接文档来配置启动流程。
 
 首次拉取项目时，GitHub 中的 `data/appexpo_local.db` 会一起下载到新电脑，所以新电脑首次安装后会自带一份数据库。后续更新才区分为：
 

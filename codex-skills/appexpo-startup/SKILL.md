@@ -33,7 +33,7 @@ If the user only asks to install, start, or use the project, do not edit busines
 - If port `4173` is occupied, stop the old process first. Do not change the project port unless the user asks.
 - If unrelated user changes exist, leave them alone.
 - `appexpo_server.pid` is only a stale helper file when it does not match the current listener PID; it is not required for startup.
-- Keep `CODEX_START_HERE.md` and `codex-skills/appexpo-startup/` when handing the folder to another Codex.
+- Keep `AppExpo_给Codex的启动交接.md`, `CODEX_START_HERE.md`, and `codex-skills/appexpo-startup/` when handing the repository to another Codex.
 - For `更新项目`, preserve the local database even if GitHub also contains `data/appexpo_local.db`.
 - For `更新数据库`, stop the server first, back up the existing local database, then replace only `data/appexpo_local.db`.
 
@@ -103,6 +103,8 @@ If npm is missing, use `python3 server.py`; npm is not required for basic startu
 ## GitHub Install And Update
 
 This project is designed so the main computer pushes updates to GitHub and other computers install or update from GitHub. A new MacBook only needs the handoff document plus GitHub repository access; copying the whole project folder is not required.
+
+The repository includes `AppExpo_给Codex的启动交接.md` at the project root. After the first clone, read that document for the full Chinese startup and maintenance workflow.
 
 First install pulls the project files and `data/appexpo_local.db` together. After that:
 
