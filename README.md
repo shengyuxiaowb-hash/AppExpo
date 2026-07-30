@@ -47,17 +47,39 @@ npm start
 
 ## GitHub 安装和更新
 
+新电脑现在不需要手动拷贝整个 `AppExpo` 项目文件夹。推荐只给 Codex：
+
+- `AppExpo_给Codex的启动交接.md`
+- GitHub 仓库地址和访问权限
+
+然后让 Codex 执行：
+
+```text
+安装项目
+```
+
+Codex 会从 GitHub 拉取项目到 `~/Desktop/AppExpo`，检查 Python 环境，并启动本地服务。
+
 项目仓库：
 
 ```text
 git@github.com:shengyuxiaowb-hash/AppExpo.git
 ```
 
-新电脑首次安装：
+新电脑首次安装的实际命令：
 
 ```bash
 cd ~/Desktop
 git clone git@github.com:shengyuxiaowb-hash/AppExpo.git AppExpo
+cd AppExpo
+python3 server.py
+```
+
+如果新电脑没有配置 SSH，但仓库可以通过 HTTPS 访问，也可以用：
+
+```bash
+cd ~/Desktop
+git clone https://github.com/shengyuxiaowb-hash/AppExpo.git AppExpo
 cd AppExpo
 python3 server.py
 ```

@@ -1,6 +1,6 @@
 ---
 name: appexpo-startup
-description: Start, stop, verify, and troubleshoot the local AppExpo project on macOS/MacBook. Use when Codex is given this AppExpo folder, when the user says "启动项目" or "关闭项目", asks to start/stop the project, migrate it to a new Mac, handle missing Python/npm, resolve port 4173 conflicts, or safely run the app without modifying business code or deleting the local SQLite database.
+description: Install, start, stop, verify, and troubleshoot the local AppExpo project on macOS/MacBook. Use when Codex is given the AppExpo handoff document or folder, when the user says "安装项目", "启动项目" or "关闭项目", asks to install/start/stop the project, migrate it to a new Mac, update from GitHub, handle missing Python/npm, resolve port 4173 conflicts, or safely run the app without modifying business code or deleting the local SQLite database.
 ---
 
 # AppExpo Startup
@@ -9,18 +9,21 @@ description: Start, stop, verify, and troubleshoot the local AppExpo project on 
 
 - `启动项目`: start AppExpo and provide `http://localhost:4173`.
 - `关闭项目`: stop the AppExpo process listening on port `4173`.
+- `安装项目`: clone AppExpo from GitHub to the new MacBook, verify the environment, then start it.
 - `更新项目`: update project code/files from GitHub, but preserve the current computer's `data/appexpo_local.db`.
 - `更新数据库`: replace the current computer's `data/appexpo_local.db` with the database version from GitHub.
 
 ## Goal
 
-Start the AppExpo local web app from this project folder and give the user:
+Install or start the AppExpo local web app and give the user:
 
 ```text
 http://localhost:4173
 ```
 
-If the user only asks to start or use the project, do not edit business code.
+On a new computer, the user no longer needs to provide the whole `AppExpo` folder. The handoff document plus the GitHub repository URL/access is enough. Clone the repository to `~/Desktop/AppExpo`, then start it.
+
+If the user only asks to install, start, or use the project, do not edit business code.
 
 ## Safety Rules
 
@@ -99,7 +102,7 @@ If npm is missing, use `python3 server.py`; npm is not required for basic startu
 
 ## GitHub Install And Update
 
-This project is designed so the main computer pushes updates to GitHub and other computers pull from GitHub.
+This project is designed so the main computer pushes updates to GitHub and other computers install or update from GitHub. A new MacBook only needs the handoff document plus GitHub repository access; copying the whole project folder is not required.
 
 Repository:
 
@@ -107,11 +110,20 @@ Repository:
 git@github.com:shengyuxiaowb-hash/AppExpo.git
 ```
 
-If the project is not present on a new MacBook, install it with:
+If the project is not present on a new MacBook, run this for `安装项目`:
 
 ```bash
 cd ~/Desktop
 git clone git@github.com:shengyuxiaowb-hash/AppExpo.git AppExpo
+cd AppExpo
+python3 server.py
+```
+
+If SSH is not configured yet and the repository is accessible by HTTPS, use this fallback:
+
+```bash
+cd ~/Desktop
+git clone https://github.com/shengyuxiaowb-hash/AppExpo.git AppExpo
 cd AppExpo
 python3 server.py
 ```
