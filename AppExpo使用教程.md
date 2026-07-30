@@ -11,7 +11,19 @@ AppExpo 是一个用于查看 Apple Store 展位、同步本地历史记录、�
 首次安装时，直接把下面这一整段发给 Codex：
 
 ```text
-安装项目。仓库地址是 git@github.com:shengyuxiaowb-hash/AppExpo.git，请拉取到 ~/Desktop/AppExpo；如果新电脑没有配置 SSH，就改用 https://github.com/shengyuxiaowb-hash/AppExpo.git。首次拉取时保留仓库里的 data/appexpo_local.db，不需要单独更新数据库。拉完后先阅读项目根目录的 AppExpo_给Codex的启动交接.md，然后检查环境并启动项目，启动成功后告诉我浏览器访问地址。
+安装项目。
+
+仓库地址：git@github.com:shengyuxiaowb-hash/AppExpo.git
+请拉取到：~/Desktop/AppExpo
+
+如果新电脑没有配置 SSH，就改用：
+https://github.com/shengyuxiaowb-hash/AppExpo.git
+
+首次拉取时保留仓库里的 data/appexpo_local.db，不需要单独更新数据库。
+
+拉完后先阅读项目根目录的 AppExpo_给Codex的启动交接.md，然后检查环境并启动项目。
+
+启动成功后告诉我浏览器访问地址。
 ```
 
 项目已经在电脑上时，日常启动只需要输入：
