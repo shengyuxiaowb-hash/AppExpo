@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AppExpo</title>
+    <script>
+      document.documentElement.dataset.theme = localStorage.getItem("appexpo-theme") || "light";
+    </script>
+    <link rel="stylesheet" href="/styles.css?v=20260625-python-export">
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">APPLE STORE PLACEMENT ANALYZER</p>
+          <h1>AppExpo</h1>
+          <div class="page-switch">
+            <a class="page-link active" href="/">实时分析</a>
+            <a class="page-link" href="/sync.html">本地同步</a>
+            <a class="page-link" href="/history.html">历史记录</a>
+            <a class="page-link" href="/history-analysis.html">历史分析</a>
+            <a class="page-link" href="/weekly.html">每周一更</a>
+          </div>
+        </div>
+        <div class="topbar-actions">
+          <button class="theme-toggle" id="themeToggle" type="button" aria-label="切换黑夜模式">
+            <span class="theme-option theme-light">白天</span>
+            <span class="theme-option theme-dark">黑夜</span>
+            <span class="theme-thumb" aria-hidden="true"></span>
+          </button>
+          <div class="status-pill">Apple API 分析模式</div>
+        </div>
+      </header>
+
+      <section class="control-panel" aria-label="分析条件">
+        <div class="app-id-panel">
+          <div class="field">
+            <div class="label-row">
+              <label for="appIdUnionInput">游戏聚合搜索分析</label>
+              <span id="appIdUnionHint"></span>
+            </div>
+            <div class="game-picker bulk-picker app-id-picker">
+              <div class="app-id-input-wrap">
+                <input id="appIdUnionInput" type="search" inputmode="search" placeholder="输入 App ID 或游戏名后联想相关国家和游戏名称" autocomplete="off">
+                <div class="game-menu app-id-union-menu" id="appIdUnionMenu" hidden>
+                  <div class="app-id-union-tools" id="appIdUnionTools"></div>
+                  <div class="game-list" id="appIdUnionList" role="listbox" aria-label="App ID 联想列表"></div>
+                </div>
+              </div>
+              <label class="app-id-page-chip">
+                <input id="appIdUnionToday" type="checkbox" checked>
+                <span>Today</span>
+              </label>
+              <label class="app-id-page-chip">
+                <input id="appIdUnionGames" type="checkbox" checked>
+                <span>Games</span>
+              </label>
+              <button id="runAppIdUnionButton" class="primary-button secondary-action" type="button">开始分析</button>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <section class="summary-strip" aria-label="分析概览">
+        <div>
+          <span class="metric" id="metricPages">0</span>
+          <span class="metric-label">检测页面</span>
+        </div>
+        <div>
+          <span class="metric" id="metricMatches">0</span>
+          <span class="metric-label">命中展位</span>
+        </div>
+        <div>
+          <span class="metric" id="metricSections">0</span>
+          <span class="metric-label">命中区域</span>
+        </div>
+      </section>
+
+      <section class="progress-area" id="progressArea" hidden>
+        <div>
+          <strong id="progressTitle">正在分析</strong>
+          <span id="progressText">正在请求 Apple editorial API...</span>
+        </div>
+        <div class="progress-bar" aria-hidden="true"><span></span></div>
+      </section>
+
+      <section class="results" id="results" aria-live="polite"></section>
+    </main>
+
+    <template id="pageResultTemplate">
+      <article class="page-result">
+        <div class="page-result-header">
+          <div>
+            <h2></h2>
+            <a target="_blank" rel="noreferrer"></a>
+          </div>
+          <div class="page-result-actions">
+            <span class="result-badge"></span>
+            <div class="export-actions" aria-label="导出图片">
+              <button class="export-trigger retry-trigger" type="button" data-retry-result hidden>重试</button>
+              <button class="export-trigger" type="button" data-export-format="png" aria-label="导出 PNG 图片">导出</button>
+            </div>
+          </div>
+        </div>
+        <div class="match-grid"></div>
+      </article>
+    </template>
+
+    <script src="/app.js?v=20260716-lookup-image"></script>
+  </body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "name": "apple-store-placement-analyzer",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Analyze Apple App Store Today and Games placements by country and game name.",
+  "type": "commonjs",
+  "scripts": {
+    "start": "python3 scripts/dev_runner.py",
+    "serve": "python3 server.py"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

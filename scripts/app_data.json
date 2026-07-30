@@ -1,0 +1,1637 @@
+{
+  "countries": {
+    "US": {
+      "label": "United States",
+      "localName": "美国",
+      "path": "us",
+      "locale": "en-US",
+      "storefront": "143441-1,29"
+    },
+    "JP": {
+      "label": "Japan",
+      "localName": "日本",
+      "path": "jp",
+      "locale": "ja",
+      "storefront": "143462-9,29"
+    },
+    "KR": {
+      "label": "Korea",
+      "localName": "韩国",
+      "path": "kr",
+      "locale": "ko",
+      "storefront": "143466-13,29"
+    },
+    "CN": {
+      "label": "China mainland",
+      "localName": "中国大陆",
+      "path": "cn",
+      "locale": "zh-Hans-CN",
+      "storefront": "143465-19,29"
+    },
+    "GB": {
+      "label": "United Kingdom",
+      "localName": "英国",
+      "path": "gb",
+      "locale": "en-GB",
+      "storefront": "143444-2,29"
+    },
+    "TW": {
+      "label": "Taiwan",
+      "localName": "中国台湾",
+      "path": "tw",
+      "locale": "zh-Hant-TW",
+      "storefront": "143470-18,29"
+    },
+    "HK": {
+      "label": "Hong Kong",
+      "localName": "中国香港",
+      "path": "hk",
+      "locale": "zh-Hant-HK",
+      "storefront": "143463-18,29"
+    },
+    "SG": {
+      "label": "Singapore",
+      "localName": "新加坡",
+      "path": "sg",
+      "locale": "en-GB",
+      "storefront": "143464-2,29"
+    },
+    "DE": {
+      "label": "Germany",
+      "localName": "德国",
+      "path": "de",
+      "locale": "de-DE",
+      "storefront": "143443-4,29"
+    },
+    "FR": {
+      "label": "France",
+      "localName": "法国",
+      "path": "fr",
+      "locale": "fr-FR",
+      "storefront": "143442-3,29"
+    },
+    "IN": {
+      "label": "India",
+      "localName": "印度",
+      "path": "in",
+      "locale": "en-GB",
+      "storefront": "143467-2,29",
+      "editorialPlatforms": "appletv,ipad,iphone,mac,watch"
+    },
+    "BR": {
+      "label": "Brazil",
+      "localName": "巴西",
+      "path": "br",
+      "locale": "pt-BR",
+      "storefront": "143503-15,29",
+      "editorialPlatforms": "appletv,ipad,iphone,mac,watch"
+    },
+    "CA": {
+      "label": "Canada",
+      "localName": "加拿大",
+      "path": "ca",
+      "locale": "en-CA",
+      "storefront": "143455-6,29"
+    },
+    "MX": {
+      "label": "Mexico",
+      "localName": "墨西哥",
+      "path": "mx",
+      "locale": "es-MX",
+      "storefront": "143468-28,29",
+      "editorialPlatforms": "appletv,ipad,iphone,mac,watch"
+    },
+    "SA": {
+      "label": "Saudi Arabia",
+      "localName": "沙特阿拉伯",
+      "path": "sa",
+      "locale": "en-GB",
+      "storefront": "143479-2,29",
+      "editorialPlatforms": "appletv,ipad,iphone,mac,watch"
+    },
+    "AU": {
+      "label": "Australia",
+      "localName": "澳大利亚",
+      "path": "au",
+      "locale": "en-AU",
+      "storefront": "143460-2,29"
+    },
+    "NZ": {
+      "label": "New Zealand",
+      "localName": "新西兰",
+      "path": "nz",
+      "locale": "en-AU",
+      "storefront": "143461-2,29",
+      "editorialPlatforms": "appletv,ipad,iphone,mac,watch"
+    },
+    "ZA": {
+      "label": "South Africa",
+      "localName": "南非",
+      "path": "za",
+      "locale": "en-GB",
+      "storefront": "143472-2,29",
+      "editorialPlatforms": "appletv,ipad,iphone,mac,watch"
+    }
+  },
+  "pageTypes": {
+    "today": {
+      "label": "Today",
+      "path": "today",
+      "query": "platform=web&additionalPlatforms=appletv%2Cipad%2Ciphone%2Cmac%2CrealityDevice%2Cwatch&extend=ageRating%2CcustomArtwork%2CcustomDeepLink%2CcustomIconArtwork%2CeditorialArtwork%2CeditorialClientParams%2CeditorialVideo%2CenrichedEditorialNotes%2CheaderBadge%2CheaderName%2CheaderTagline%2CiconArtwork%2CminimumOSVersion%2CrequiredCapabilities%2CshortEditorialNotes&extend%5Beditorial-item-groups%5D=editorialClientParams&extend%5Bapp-events%5D=description%2CproductArtwork%2CproductVideo&include%5Beditorial-items%5D=header-contents%2Cmarketing-items%2Cprimary-content&include%5Beditorial-item-groups%5D=header-contents&include%5Bapp-events%5D=app&meta%5Bmarketing-items%5D=metrics&associate%5Beditorial-item-groups%5D=editorial-cards%2Crecommendations&associate%5Beditorial-items%5D=editorial-cards&sparseLimit=40&sparseCount=40&previewPlatform=iphone&meta=personalizationData&with=editorialItemGroups%2CappEvents%2CheroStyles"
+    },
+    "games": {
+      "label": "Games",
+      "path": "groupings",
+      "query": "platform=web&additionalPlatforms=appletv%2Cipad%2Ciphone%2Cmac%2CrealityDevice%2Cwatch&extend=ageRating%2Cbadge-content%2CcustomArtwork%2CcustomDeepLink%2CcustomIconArtwork%2CeditorialArtwork%2CeditorialVideo%2CexpectedReleaseDateDisplayFormat%2CiconArtwork%2CisAppleWatchSupported%2CmacRequiredCapabilities%2CrequiredCapabilities%2CshowExpectedReleaseDate&extend%5Bapps%5D=isVerifiedForAppleSiliconMac&extend%5Bapp-events%5D=description%2CproductArtwork%2CproductVideo&include%5Beditorial-items%5D=marketing-items&include%5Bapp-events%5D=app&meta%5Bmarketing-items%5D=metrics&meta%5Beditorial-elements%3Acontents%5D=cppData%2CpersonalizationData&sparseLimit%5Beditorial-elements%3Acontents%5D=15&sparseCount=40&name=games&previewPlatform=iphone&with=macOSCompatibleIOSApps%2CappEvents%2CfeaturedCategories%2CcategoryBricks"
+    }
+  },
+  "knownNames": {
+    "1234148531": "少女前线",
+    "1295507243": "碧蓝航线",
+    "1445639588": "明日之后",
+    "1460652305": "明日之后",
+    "1473544990": "不休的乌拉拉",
+    "1563750315": "香肠派对",
+    "1579850555": "派对之星",
+    "1593130084": "火炬之光：无限",
+    "1670576799": "铃兰之剑",
+    "6746151928": "心动小镇",
+    "6746141921": "伊瑟",
+    "6737684676": "伊瑟",
+    "6446155179": "出发吧麦芬",
+    "6451019582": "铃兰之剑",
+    "6503228738": "出发吧麦芬",
+    "6503232968": "出发吧麦芬",
+    "6503242421": "出发吧麦芬",
+    "6748013182": "蓝色协议：星之共鸣",
+    "heartopia": "心动小镇",
+    "etheriarestart": "伊瑟",
+    "flashparty": "派对之星",
+    "gogomuffin": "出发吧麦芬",
+    "ulalaidleadventure": "不休的乌拉拉",
+    "lifeafternightfalls": "明日之后",
+    "girlsfrontline": "少女前线",
+    "blueprotocolstarresonance": "蓝色协议：星之共鸣",
+    "swordofconvallaria": "铃兰之剑",
+    "sausageman": "香肠派对",
+    "torchlightinfinite": "火炬之光：无限"
+  },
+  "staticGames": {
+    "US": [
+      [
+        "6737684676",
+        "Etheria: Restart",
+        "伊瑟"
+      ],
+      [
+        "1579850555",
+        "Flash Party",
+        "派对之星"
+      ],
+      [
+        "6746151928",
+        "Heartopia",
+        "心动小镇"
+      ],
+      [
+        "6503228738",
+        "Go Go Muffin",
+        "出发吧麦芬"
+      ],
+      [
+        "1473544990",
+        "Ulala: Idle Adventure",
+        "不休的乌拉拉"
+      ],
+      [
+        "1563750315",
+        "Sausage Man",
+        "香肠派对"
+      ],
+      [
+        "6451019582",
+        "Sword of Convallaria",
+        "铃兰之剑"
+      ],
+      [
+        "1602814337",
+        "T3 Arena",
+        ""
+      ],
+      [
+        "1593130084",
+        "Torchlight: Infinite",
+        "火炬之光：无限"
+      ],
+      [
+        "6475638448",
+        "Metal Slug: Awakening-Season7",
+        "Metal Slug: Awakening"
+      ],
+      [
+        "6471216996",
+        "Pixel Heroes: Tales of Emond",
+        "Pixel Heroes: Tales of Emond"
+      ],
+      [
+        "1066751995",
+        "《神仙道》高清重制版",
+        "神仙道 高清重制版"
+      ],
+      [
+        "6758334085",
+        "Quack Quack Attack",
+        "嘎嘎奇兵：蛋力來勝"
+      ],
+      [
+        "1623596533",
+        "Settlement Survival",
+        "Settlement Survival"
+      ]
+    ],
+    "JP": [
+      [
+        "6461049770",
+        "鈴蘭の剣",
+        "铃兰之剑"
+      ],
+      [
+        "1602814337",
+        "T3 アリーナ",
+        ""
+      ],
+      [
+        "6746141921",
+        "イザリア",
+        "伊瑟"
+      ],
+      [
+        "6503242421",
+        "GOGOマフィン",
+        "出发吧麦芬"
+      ],
+      [
+        "1473544990",
+        "うらら〜ハンターライフ〜",
+        "不休的乌拉拉"
+      ],
+      [
+        "6748013182",
+        "ブループロトコル スターレゾナンス",
+        "蓝色协议：星之共鸣"
+      ],
+      [
+        "1563750315",
+        "ソーセージマン",
+        "香肠派对"
+      ],
+      [
+        "1593130084",
+        "トーチライト：インフィニティ",
+        "火炬之光：无限"
+      ],
+      [
+        "6746151928",
+        "ハートピアスローライフ",
+        "心动小镇"
+      ],
+      [
+        "1579850555",
+        "フラッシュパーティー",
+        "派对之星"
+      ],
+      [
+        "6737179424",
+        "星落：深淵のエルピス",
+        "星落"
+      ],
+      [
+        "6499011827",
+        "ドールズフロントライン2：エクシリウム",
+        "GIRLS' FRONTLINE 2"
+      ],
+      [
+        "6475638448",
+        "Metal Slug: Awakening",
+        "Metal Slug: Awakening"
+      ],
+      [
+        "1066751995",
+        "《神仙道》高清重制版",
+        "神仙道 高清重制版"
+      ],
+      [
+        "6758334085",
+        "ダックスクワッド：バウンドエッグ",
+        "嘎嘎奇兵：蛋力來勝"
+      ],
+      [
+        "1623596533",
+        "Settlement Survival",
+        "Settlement Survival"
+      ]
+    ],
+    "KR": [
+      [
+        "6746151928",
+        "두근두근타운",
+        "心动小镇"
+      ],
+      [
+        "6746141921",
+        "에테리아: 리스타트",
+        "伊瑟"
+      ],
+      [
+        "6503232968",
+        "고고 머핀",
+        "出发吧麦芬"
+      ],
+      [
+        "1445639588",
+        "라이프애프터",
+        "明日之后"
+      ],
+      [
+        "1295507243",
+        "벽람항로",
+        "碧蓝航线"
+      ],
+      [
+        "6748013182",
+        "블루 프로토콜 스타 레조넌스",
+        "蓝色协议：星之共鸣"
+      ],
+      [
+        "1234148531",
+        "소녀전선 Girls' Frontline",
+        "少女前线"
+      ],
+      [
+        "1473544990",
+        "오늘도 우라라 원시 헌팅 라이프",
+        "不休的乌拉拉"
+      ],
+      [
+        "1563750315",
+        "Sausage Man",
+        "香肠派对"
+      ],
+      [
+        "6451019582",
+        "Sword of Convallaria",
+        "铃兰之剑"
+      ],
+      [
+        "1602814337",
+        "T3 Arena",
+        ""
+      ],
+      [
+        "1593130084",
+        "Torchlight: Infinite",
+        "火炬之光：无限"
+      ],
+      [
+        "1579850555",
+        "Flash Party",
+        "派对之星"
+      ],
+      [
+        "6499011827",
+        "소녀전선2: 망명",
+        "GIRLS' FRONTLINE 2"
+      ],
+      [
+        "6475638448",
+        "메탈슬러그: 각성",
+        "Metal Slug: Awakening"
+      ],
+      [
+        "6758334085",
+        "꽥꽥 구조대 - 알 폭격 디펜스",
+        "嘎嘎奇兵：蛋力來勝"
+      ],
+      [
+        "6449023119",
+        "리버스: 1999",
+        "Reverse: 1999"
+      ],
+      [
+        "1623596533",
+        "Settlement Survival",
+        "Settlement Survival"
+      ]
+    ],
+    "GB": [
+      [
+        "6737684676",
+        "Etheria: Restart",
+        "伊瑟"
+      ],
+      [
+        "1579850555",
+        "Flash Party",
+        "派对之星"
+      ],
+      [
+        "6746151928",
+        "Heartopia",
+        "心动小镇"
+      ],
+      [
+        "6503228738",
+        "Go Go Muffin",
+        "出发吧麦芬"
+      ],
+      [
+        "1460652305",
+        "LifeAfter: Night falls",
+        "明日之后"
+      ],
+      [
+        "1473544990",
+        "Ulala: Idle Adventure",
+        "不休的乌拉拉"
+      ],
+      [
+        "1563750315",
+        "Sausage Man",
+        "香肠派对"
+      ],
+      [
+        "6451019582",
+        "Sword of Convallaria",
+        "铃兰之剑"
+      ],
+      [
+        "1602814337",
+        "T3 Arena",
+        ""
+      ],
+      [
+        "1593130084",
+        "Torchlight: Infinite",
+        "火炬之光：无限"
+      ],
+      [
+        "6499011827",
+        "GIRLS' FRONTLINE 2™: EXILIUM",
+        "GIRLS' FRONTLINE 2"
+      ],
+      [
+        "6475638448",
+        "Metal Slug: Awakening-Season7",
+        "Metal Slug: Awakening"
+      ],
+      [
+        "6471216996",
+        "Pixel Heroes: Tales of Emond",
+        "Pixel Heroes: Tales of Emond"
+      ],
+      [
+        "1066751995",
+        "《神仙道》高清重制版",
+        "神仙道 高清重制版"
+      ],
+      [
+        "6758334085",
+        "Quack Quack Attack",
+        "嘎嘎奇兵：蛋力來勝"
+      ],
+      [
+        "1623596533",
+        "Settlement Survival",
+        "Settlement Survival"
+      ]
+    ],
+    "TW": [
+      [
+        "6746151928",
+        "心動小鎮",
+        "心动小镇"
+      ],
+      [
+        "6746141921",
+        "伊瑟",
+        "伊瑟"
+      ],
+      [
+        "6446155179",
+        "出發吧麥芬",
+        "出发吧麦芬"
+      ],
+      [
+        "1670576799",
+        "鈴蘭之劍：為這和平的世界",
+        "铃兰之剑"
+      ],
+      [
+        "1563750315",
+        "香腸派對",
+        "香肠派对"
+      ],
+      [
+        "1593130084",
+        "火炬之光：無限",
+        "火炬之光：无限"
+      ],
+      [
+        "1602814337",
+        "T3 Arena",
+        ""
+      ],
+      [
+        "1579850555",
+        "Flash Party",
+        "派对之星"
+      ],
+      [
+        "6758334085",
+        "嘎嘎奇兵：蛋力來勝",
+        "嘎嘎奇兵：蛋力來勝"
+      ]
+    ],
+    "HK": [
+      [
+        "6746151928",
+        "心動小鎮",
+        "心动小镇"
+      ],
+      [
+        "6746141921",
+        "伊瑟",
+        "伊瑟"
+      ],
+      [
+        "6446155179",
+        "出發吧麥芬",
+        "出发吧麦芬"
+      ],
+      [
+        "1670576799",
+        "鈴蘭之劍：為這和平的世界",
+        "铃兰之剑"
+      ],
+      [
+        "1563750315",
+        "香腸派對",
+        "香肠派对"
+      ],
+      [
+        "1593130084",
+        "火炬之光：無限",
+        "火炬之光：无限"
+      ],
+      [
+        "1602814337",
+        "T3 Arena",
+        ""
+      ],
+      [
+        "1579850555",
+        "Flash Party",
+        "派对之星"
+      ],
+      [
+        "6758334085",
+        "嘎嘎奇兵：蛋力來勝",
+        "嘎嘎奇兵：蛋力來勝"
+      ]
+    ],
+    "SG": [
+      [
+        "6737684676",
+        "Etheria: Restart",
+        "伊瑟"
+      ],
+      [
+        "1579850555",
+        "Flash Party",
+        "派对之星"
+      ],
+      [
+        "6746151928",
+        "Heartopia",
+        "心动小镇"
+      ],
+      [
+        "6503228738",
+        "Go Go Muffin",
+        "出发吧麦芬"
+      ],
+      [
+        "1473544990",
+        "Ulala: Idle Adventure",
+        "不休的乌拉拉"
+      ],
+      [
+        "1563750315",
+        "Sausage Man",
+        "香肠派对"
+      ],
+      [
+        "6451019582",
+        "Sword of Convallaria",
+        "铃兰之剑"
+      ],
+      [
+        "1602814337",
+        "T3 Arena",
+        ""
+      ],
+      [
+        "1593130084",
+        "Torchlight: Infinite",
+        "火炬之光：无限"
+      ],
+      [
+        "6499011827",
+        "GIRLS' FRONTLINE 2™: EXILIUM",
+        "GIRLS' FRONTLINE 2"
+      ],
+      [
+        "6502582421",
+        "Pixel Heroes: Emond Saga",
+        "Pixel Heroes: Emond Saga"
+      ],
+      [
+        "6758334085",
+        "Quack Quack Attack",
+        "嘎嘎奇兵：蛋力來勝"
+      ],
+      [
+        "6737753806",
+        "星痕共鳴",
+        "星痕共鸣"
+      ],
+      [
+        "1623596533",
+        "Settlement Survival",
+        "Settlement Survival"
+      ]
+    ],
+    "DE": [
+      [
+        "6737684676",
+        "Etheria: Restart",
+        "伊瑟"
+      ],
+      [
+        "1579850555",
+        "Flash Party",
+        "派对之星"
+      ],
+      [
+        "6746151928",
+        "Heartopia",
+        "心动小镇"
+      ],
+      [
+        "6503228738",
+        "Go Go Muffin",
+        "出发吧麦芬"
+      ],
+      [
+        "1460652305",
+        "LifeAfter: Night falls",
+        "明日之后"
+      ],
+      [
+        "1473544990",
+        "Ulala: Idle Adventure",
+        "不休的乌拉拉"
+      ],
+      [
+        "1563750315",
+        "Sausage Man",
+        "香肠派对"
+      ],
+      [
+        "6451019582",
+        "Sword of Convallaria",
+        "铃兰之剑"
+      ],
+      [
+        "1602814337",
+        "T3 Arena",
+        ""
+      ],
+      [
+        "1593130084",
+        "Torchlight: Infinite",
+        "火炬之光：无限"
+      ],
+      [
+        "6499011827",
+        "GIRLS' FRONTLINE 2™: EXILIUM",
+        "GIRLS' FRONTLINE 2"
+      ],
+      [
+        "6475638448",
+        "Metal Slug: Awakening",
+        "Metal Slug: Awakening"
+      ],
+      [
+        "6471216996",
+        "Pixel Heroes: Tales of Emond",
+        "Pixel Heroes: Tales of Emond"
+      ],
+      [
+        "1066751995",
+        "《神仙道》高清重制版",
+        "神仙道 高清重制版"
+      ],
+      [
+        "6758334085",
+        "Quack Quack Attack",
+        "嘎嘎奇兵：蛋力來勝"
+      ],
+      [
+        "1623596533",
+        "Settlement Survival",
+        "Settlement Survival"
+      ]
+    ],
+    "FR": [
+      [
+        "6737684676",
+        "Etheria: Restart",
+        "伊瑟"
+      ],
+      [
+        "1579850555",
+        "Flash Party",
+        "派对之星"
+      ],
+      [
+        "6746151928",
+        "Heartopia",
+        "心动小镇"
+      ],
+      [
+        "6503228738",
+        "Go Go Muffin",
+        "出发吧麦芬"
+      ],
+      [
+        "1460652305",
+        "LifeAfter: Night falls",
+        "明日之后"
+      ],
+      [
+        "1473544990",
+        "Ulala: Idle Adventure",
+        "不休的乌拉拉"
+      ],
+      [
+        "1563750315",
+        "Sausage Man",
+        "香肠派对"
+      ],
+      [
+        "6451019582",
+        "Sword of Convallaria",
+        "铃兰之剑"
+      ],
+      [
+        "1602814337",
+        "T3 Arena",
+        ""
+      ],
+      [
+        "1593130084",
+        "Torchlight: Infinite",
+        "火炬之光：无限"
+      ],
+      [
+        "6499011827",
+        "GIRLS' FRONTLINE 2™: EXILIUM",
+        "GIRLS' FRONTLINE 2"
+      ],
+      [
+        "6475638448",
+        "Metal Slug: Awakening",
+        "Metal Slug: Awakening"
+      ],
+      [
+        "6471216996",
+        "Pixel Heroes: Tales of Emond",
+        "Pixel Heroes: Tales of Emond"
+      ],
+      [
+        "1066751995",
+        "《神仙道》高清重制版",
+        "神仙道 高清重制版"
+      ],
+      [
+        "6758334085",
+        "Quack Quack Attack",
+        "嘎嘎奇兵：蛋力來勝"
+      ],
+      [
+        "1623596533",
+        "Settlement Survival",
+        "Settlement Survival"
+      ]
+    ],
+    "IN": [
+      [
+        "6737684676",
+        "Etheria: Restart",
+        "伊瑟"
+      ],
+      [
+        "1579850555",
+        "Flash Party",
+        "派对之星"
+      ],
+      [
+        "6503228738",
+        "Go Go Muffin",
+        "出发吧麦芬"
+      ],
+      [
+        "6746151928",
+        "Heartopia",
+        "心动小镇"
+      ],
+      [
+        "1563750315",
+        "Sausage Man",
+        "香肠派对"
+      ],
+      [
+        "6451019582",
+        "Sword of Convallaria",
+        "铃兰之剑"
+      ],
+      [
+        "1602814337",
+        "T3 Arena",
+        ""
+      ],
+      [
+        "1593130084",
+        "Torchlight: Infinite",
+        "火炬之光：无限"
+      ],
+      [
+        "1473544990",
+        "Ulala: Idle Adventure",
+        "不休的乌拉拉"
+      ],
+      [
+        "6471216996",
+        "Pixel Heroes: Tales of Emond",
+        "Pixel Heroes: Tales of Emond"
+      ],
+      [
+        "1066751995",
+        "《神仙道》高清重制版",
+        "神仙道 高清重制版"
+      ],
+      [
+        "6758334085",
+        "Quack Quack Attack",
+        "嘎嘎奇兵：蛋力來勝"
+      ],
+      [
+        "1623596533",
+        "Settlement Survival",
+        "Settlement Survival"
+      ]
+    ],
+    "BR": [
+      [
+        "6737684676",
+        "Etheria: Restart",
+        "伊瑟"
+      ],
+      [
+        "1579850555",
+        "Flash Party",
+        "派对之星"
+      ],
+      [
+        "6503228738",
+        "Go Go Muffin",
+        "出发吧麦芬"
+      ],
+      [
+        "6746151928",
+        "Heartopia",
+        "心动小镇"
+      ],
+      [
+        "1563750315",
+        "Sausage Man",
+        "香肠派对"
+      ],
+      [
+        "6451019582",
+        "Sword of Convallaria",
+        "铃兰之剑"
+      ],
+      [
+        "1602814337",
+        "T3 Arena",
+        ""
+      ],
+      [
+        "1593130084",
+        "Torchlight: Infinite",
+        "火炬之光：无限"
+      ],
+      [
+        "1473544990",
+        "Ulala: Idle Adventure",
+        "不休的乌拉拉"
+      ],
+      [
+        "6499011827",
+        "GIRLS' FRONTLINE 2™: EXILIUM",
+        "GIRLS' FRONTLINE 2"
+      ],
+      [
+        "6475638448",
+        "Metal Slug: Awakening",
+        "Metal Slug: Awakening"
+      ],
+      [
+        "6471216996",
+        "Pixel Heroes: Tales of Emond",
+        "Pixel Heroes: Tales of Emond"
+      ],
+      [
+        "1066751995",
+        "《神仙道》高清重制版",
+        "神仙道 高清重制版"
+      ],
+      [
+        "6758334085",
+        "Quack Quack Attack",
+        "嘎嘎奇兵：蛋力來勝"
+      ],
+      [
+        "1623596533",
+        "Settlement Survival",
+        "Settlement Survival"
+      ]
+    ],
+    "CA": [
+      [
+        "6737684676",
+        "Etheria: Restart",
+        "伊瑟"
+      ],
+      [
+        "1579850555",
+        "Flash Party",
+        "派对之星"
+      ],
+      [
+        "6503228738",
+        "Go Go Muffin",
+        "出发吧麦芬"
+      ],
+      [
+        "6746151928",
+        "Heartopia",
+        "心动小镇"
+      ],
+      [
+        "1563750315",
+        "Sausage Man",
+        "香肠派对"
+      ],
+      [
+        "6451019582",
+        "Sword of Convallaria",
+        "铃兰之剑"
+      ],
+      [
+        "1602814337",
+        "T3 Arena",
+        ""
+      ],
+      [
+        "1593130084",
+        "Torchlight: Infinite",
+        "火炬之光：无限"
+      ],
+      [
+        "1473544990",
+        "Ulala: Idle Adventure",
+        "不休的乌拉拉"
+      ],
+      [
+        "6475638448",
+        "Metal Slug: Awakening-Season7",
+        "Metal Slug: Awakening"
+      ],
+      [
+        "6471216996",
+        "Pixel Heroes: Tales of Emond",
+        "Pixel Heroes: Tales of Emond"
+      ],
+      [
+        "1066751995",
+        "《神仙道》高清重制版",
+        "神仙道 高清重制版"
+      ],
+      [
+        "6758334085",
+        "Quack Quack Attack",
+        "嘎嘎奇兵：蛋力來勝"
+      ],
+      [
+        "1623596533",
+        "Settlement Survival",
+        "Settlement Survival"
+      ]
+    ],
+    "MX": [
+      [
+        "6737684676",
+        "Etheria: Restart",
+        "伊瑟"
+      ],
+      [
+        "1579850555",
+        "Flash Party",
+        "派对之星"
+      ],
+      [
+        "6503228738",
+        "Go Go Muffin",
+        "出发吧麦芬"
+      ],
+      [
+        "6746151928",
+        "Heartopia",
+        "心动小镇"
+      ],
+      [
+        "1563750315",
+        "Sausage Man",
+        "香肠派对"
+      ],
+      [
+        "6451019582",
+        "Sword of Convallaria",
+        "铃兰之剑"
+      ],
+      [
+        "1602814337",
+        "T3 Arena",
+        ""
+      ],
+      [
+        "1593130084",
+        "Torchlight: Infinite",
+        "火炬之光：无限"
+      ],
+      [
+        "1473544990",
+        "Ulala: Idle Adventure",
+        "不休的乌拉拉"
+      ],
+      [
+        "6499011827",
+        "GIRLS' FRONTLINE 2™: EXILIUM",
+        "GIRLS' FRONTLINE 2"
+      ],
+      [
+        "6475638448",
+        "Metal Slug: Awakening",
+        "Metal Slug: Awakening"
+      ],
+      [
+        "6471216996",
+        "Pixel Heroes: Tales of Emond",
+        "Pixel Heroes: Tales of Emond"
+      ],
+      [
+        "1066751995",
+        "《神仙道》高清重制版",
+        "神仙道 高清重制版"
+      ],
+      [
+        "6758334085",
+        "Quack Quack Attack",
+        "嘎嘎奇兵：蛋力來勝"
+      ],
+      [
+        "1623596533",
+        "Settlement Survival",
+        "Settlement Survival"
+      ]
+    ],
+    "SA": [
+      [
+        "6737684676",
+        "Etheria: Restart",
+        "伊瑟"
+      ],
+      [
+        "1579850555",
+        "Flash Party",
+        "派对之星"
+      ],
+      [
+        "6503228738",
+        "Go Go Muffin",
+        "出发吧麦芬"
+      ],
+      [
+        "6746151928",
+        "Heartopia",
+        "心动小镇"
+      ],
+      [
+        "1563750315",
+        "Sausage Man",
+        "香肠派对"
+      ],
+      [
+        "6451019582",
+        "Sword of Convallaria",
+        "铃兰之剑"
+      ],
+      [
+        "1602814337",
+        "T3 Arena",
+        ""
+      ],
+      [
+        "1593130084",
+        "Torchlight: Infinite",
+        "火炬之光：无限"
+      ],
+      [
+        "1473544990",
+        "Ulala: Idle Adventure",
+        "不休的乌拉拉"
+      ],
+      [
+        "6475638448",
+        "Metal Slug: Awakening-Season7",
+        "Metal Slug: Awakening"
+      ],
+      [
+        "6471216996",
+        "Pixel Heroes: Tales of Emond",
+        "Pixel Heroes: Tales of Emond"
+      ],
+      [
+        "1066751995",
+        "《神仙道》高清重制版",
+        "神仙道 高清重制版"
+      ],
+      [
+        "6758334085",
+        "Quack Quack Attack",
+        "嘎嘎奇兵：蛋力來勝"
+      ],
+      [
+        "1623596533",
+        "Settlement Survival",
+        "Settlement Survival"
+      ]
+    ],
+    "AU": [
+      [
+        "6737684676",
+        "Etheria: Restart",
+        "伊瑟"
+      ],
+      [
+        "1579850555",
+        "Flash Party",
+        "派对之星"
+      ],
+      [
+        "6503228738",
+        "Go Go Muffin",
+        "出发吧麦芬"
+      ],
+      [
+        "6746151928",
+        "Heartopia",
+        "心动小镇"
+      ],
+      [
+        "1563750315",
+        "Sausage Man",
+        "香肠派对"
+      ],
+      [
+        "6451019582",
+        "Sword of Convallaria",
+        "铃兰之剑"
+      ],
+      [
+        "1602814337",
+        "T3 Arena",
+        ""
+      ],
+      [
+        "1593130084",
+        "Torchlight: Infinite",
+        "火炬之光：无限"
+      ],
+      [
+        "1473544990",
+        "Ulala: Idle Adventure",
+        "不休的乌拉拉"
+      ],
+      [
+        "6475638448",
+        "Metal Slug: Awakening-Season7",
+        "Metal Slug: Awakening"
+      ],
+      [
+        "6471216996",
+        "Pixel Heroes: Tales of Emond",
+        "Pixel Heroes: Tales of Emond"
+      ],
+      [
+        "1066751995",
+        "《神仙道》高清重制版",
+        "神仙道 高清重制版"
+      ],
+      [
+        "6758334085",
+        "Quack Quack Attack",
+        "嘎嘎奇兵：蛋力來勝"
+      ],
+      [
+        "1623596533",
+        "Settlement Survival",
+        "Settlement Survival"
+      ]
+    ],
+    "NZ": [
+      [
+        "6737684676",
+        "Etheria: Restart",
+        "伊瑟"
+      ],
+      [
+        "1579850555",
+        "Flash Party",
+        "派对之星"
+      ],
+      [
+        "6503228738",
+        "Go Go Muffin",
+        "出发吧麦芬"
+      ],
+      [
+        "6746151928",
+        "Heartopia",
+        "心动小镇"
+      ],
+      [
+        "1563750315",
+        "Sausage Man",
+        "香肠派对"
+      ],
+      [
+        "6451019582",
+        "Sword of Convallaria",
+        "铃兰之剑"
+      ],
+      [
+        "1602814337",
+        "T3 Arena",
+        ""
+      ],
+      [
+        "1593130084",
+        "Torchlight: Infinite",
+        "火炬之光：无限"
+      ],
+      [
+        "1473544990",
+        "Ulala: Idle Adventure",
+        "不休的乌拉拉"
+      ],
+      [
+        "6475638448",
+        "Metal Slug: Awakening-Season7",
+        "Metal Slug: Awakening"
+      ],
+      [
+        "6471216996",
+        "Pixel Heroes: Tales of Emond",
+        "Pixel Heroes: Tales of Emond"
+      ],
+      [
+        "1066751995",
+        "《神仙道》高清重制版",
+        "神仙道 高清重制版"
+      ],
+      [
+        "6758334085",
+        "Quack Quack Attack",
+        "嘎嘎奇兵：蛋力來勝"
+      ],
+      [
+        "1623596533",
+        "Settlement Survival",
+        "Settlement Survival"
+      ]
+    ],
+    "ZA": [
+      [
+        "6737684676",
+        "Etheria: Restart",
+        "伊瑟"
+      ],
+      [
+        "1579850555",
+        "Flash Party",
+        "派对之星"
+      ],
+      [
+        "6503228738",
+        "Go Go Muffin",
+        "出发吧麦芬"
+      ],
+      [
+        "6746151928",
+        "Heartopia",
+        "心动小镇"
+      ],
+      [
+        "1563750315",
+        "Sausage Man",
+        "香肠派对"
+      ],
+      [
+        "6451019582",
+        "Sword of Convallaria",
+        "铃兰之剑"
+      ],
+      [
+        "1602814337",
+        "T3 Arena",
+        ""
+      ],
+      [
+        "1593130084",
+        "Torchlight: Infinite",
+        "火炬之光：无限"
+      ],
+      [
+        "1473544990",
+        "Ulala: Idle Adventure",
+        "不休的乌拉拉"
+      ],
+      [
+        "6475638448",
+        "Metal Slug: Awakening-Season7",
+        "Metal Slug: Awakening"
+      ],
+      [
+        "6471216996",
+        "Pixel Heroes: Tales of Emond",
+        "Pixel Heroes: Tales of Emond"
+      ],
+      [
+        "1066751995",
+        "《神仙道》高清重制版",
+        "神仙道 高清重制版"
+      ],
+      [
+        "6758334085",
+        "Quack Quack Attack",
+        "嘎嘎奇兵：蛋力來勝"
+      ],
+      [
+        "1623596533",
+        "Settlement Survival",
+        "Settlement Survival"
+      ]
+    ],
+    "CN": [
+      [
+        "1271620263",
+        "艾希 - ICEY",
+        ""
+      ],
+      [
+        "1464502983",
+        "不休的乌拉拉",
+        ""
+      ],
+      [
+        "1614200925",
+        "部落与弯刀",
+        ""
+      ],
+      [
+        "1638926230",
+        "出发吧麦芬",
+        ""
+      ],
+      [
+        "1635913906",
+        "传说法师",
+        ""
+      ],
+      [
+        "6502489827",
+        "大侠立志传",
+        ""
+      ],
+      [
+        "1453808408",
+        "恶果之地",
+        ""
+      ],
+      [
+        "6499512726",
+        "浮岛冒险",
+        ""
+      ],
+      [
+        "1211626812",
+        "海姆达尔 Heimdallr",
+        ""
+      ],
+      [
+        "6751790875",
+        "横扫千军怀旧服",
+        ""
+      ],
+      [
+        "6446614518",
+        "画中世界",
+        ""
+      ],
+      [
+        "1528917194",
+        "火炬之光：无限",
+        ""
+      ],
+      [
+        "1576661186",
+        "火力苏打（T3）",
+        ""
+      ],
+      [
+        "6751309563",
+        "火山的女儿：再度重逢",
+        ""
+      ],
+      [
+        "1610678618",
+        "进化之地2",
+        ""
+      ],
+      [
+        "6449702556",
+        "铃兰之剑：为这和平的世界",
+        ""
+      ],
+      [
+        "1435446586",
+        "另一个伊甸超越时空的猫",
+        ""
+      ],
+      [
+        "1584313012",
+        "笼中窥梦",
+        ""
+      ],
+      [
+        "1550062096",
+        "露西她所期望的一切",
+        ""
+      ],
+      [
+        "1512566562",
+        "冒险公社",
+        ""
+      ],
+      [
+        "1579850203",
+        "派对之星",
+        ""
+      ],
+      [
+        "6467381694",
+        "气球塔防6-超人气塔防手游",
+        ""
+      ],
+      [
+        "6755228041",
+        "潜水员戴夫",
+        ""
+      ],
+      [
+        "1159700098",
+        "去月球-To the Moon",
+        ""
+      ],
+      [
+        "6443786927",
+        "全面憨憨战争模拟器",
+        ""
+      ],
+      [
+        "1458460469",
+        "人类跌落梦境",
+        ""
+      ],
+      [
+        "1498582245",
+        "少年的人间奇遇",
+        ""
+      ],
+      [
+        "1603751166",
+        "神仙道小助手",
+        ""
+      ],
+      [
+        "1380582804",
+        "手机帝国",
+        ""
+      ],
+      [
+        "1159266744",
+        "双子 Gemini",
+        ""
+      ],
+      [
+        "1157863540",
+        "泰拉瑞亚",
+        ""
+      ],
+      [
+        "6444396120",
+        "挺进地牢",
+        ""
+      ],
+      [
+        "1548443728",
+        "骰子元素师",
+        ""
+      ],
+      [
+        "1670078436",
+        "无尽旅图",
+        ""
+      ],
+      [
+        "1070092192",
+        "仙境传说RO：天天打波利",
+        ""
+      ],
+      [
+        "1326730621",
+        "香肠派对",
+        ""
+      ],
+      [
+        "1561903786",
+        "心动小镇",
+        ""
+      ],
+      [
+        "6466390901",
+        "旋转音律 Rotaeno",
+        ""
+      ],
+      [
+        "1454750038",
+        "寻找天堂",
+        ""
+      ],
+      [
+        "6670430491",
+        "伊瑟",
+        ""
+      ],
+      [
+        "6472240184",
+        "竹马胭脂铺",
+        ""
+      ],
+      [
+        "6446981035",
+        "星落",
+        "星落"
+      ],
+      [
+        "6476490214",
+        "洛伊的移动要塞",
+        "洛伊的移动要塞"
+      ]
+    ]
+  }
+}

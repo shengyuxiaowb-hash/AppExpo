@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AppExpo 每周一更</title>
+    <script>
+      document.documentElement.dataset.theme = localStorage.getItem("appexpo-theme") || "light";
+    </script>
+    <link rel="stylesheet" href="/styles.css?v=20260721-weekly">
+  </head>
+  <body>
+    <main class="app-shell weekly-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">APPLE STORE PLACEMENT ANALYZER</p>
+          <h1>AppExpo 每周一更</h1>
+          <div class="page-switch">
+            <a class="page-link" href="/">实时分析</a>
+            <a class="page-link" href="/sync.html">本地同步</a>
+            <a class="page-link" href="/history.html">历史记录</a>
+            <a class="page-link" href="/history-analysis.html">历史分析</a>
+            <a class="page-link active" href="/weekly.html">每周一更</a>
+          </div>
+        </div>
+        <div class="topbar-actions">
+          <button class="theme-toggle" id="themeToggle" type="button" aria-label="切换黑夜模式">
+            <span class="theme-option theme-light">白天</span>
+            <span class="theme-option theme-dark">黑夜</span>
+            <span class="theme-thumb" aria-hidden="true"></span>
+          </button>
+          <div class="status-pill" id="weeklyStatusPill">每日自动抓取</div>
+        </div>
+      </header>
+
+      <section class="control-panel weekly-control" aria-label="每周一更筛选">
+        <div class="field weekly-country-field">
+          <label>国家 / 地区</label>
+          <div class="weekly-picker" id="weeklyCountryPicker">
+            <button id="weeklyCountryTrigger" class="weekly-picker-trigger" type="button" aria-haspopup="listbox" aria-expanded="false">
+              <span>选择国家</span>
+              <strong>-</strong>
+            </button>
+            <div class="weekly-picker-menu" id="weeklyCountryMenu" hidden>
+              <div class="weekly-picker-list" id="weeklyCountryList" role="listbox" aria-label="国家 / 地区"></div>
+            </div>
+          </div>
+        </div>
+        <div class="field weekly-week-field">
+          <label>当前周次</label>
+          <div class="weekly-picker" id="weeklyWeekPicker">
+            <button id="weeklyWeekTrigger" class="weekly-picker-trigger" type="button" aria-haspopup="listbox" aria-expanded="false">
+              <span>本周周次</span>
+              <strong>-</strong>
+            </button>
+            <div class="weekly-picker-menu" id="weeklyWeekMenu" hidden>
+              <div class="weekly-picker-list" id="weeklyWeekList" role="listbox" aria-label="本周周次"></div>
+            </div>
+          </div>
+        </div>
+        <div class="field weekly-date-field">
+          <label>今日日期</label>
+          <div class="weekly-date-display" id="weeklyTodayLabel">-</div>
+        </div>
+      </section>
+
+      <section class="weekly-schedule" aria-label="周一到周日排期" id="weeklySchedule"></section>
+
+      <section class="weekly-section">
+        <div class="weekly-section-head">
+          <div>
+            <h2>Games · Banner</h2>
+            <p id="weeklyCarouselHint">Games 页面顶部轮播内容。</p>
+          </div>
+          <span class="result-badge" id="weeklyCarouselCount">0 条</span>
+        </div>
+        <div class="weekly-rail" id="weeklyCarouselRail"></div>
+      </section>
+
+      <section class="weekly-section">
+        <div class="weekly-section-head">
+          <div>
+            <h2>Games · Event</h2>
+            <p id="weeklyEventHint">Games 页面游戏活动内容。</p>
+          </div>
+          <span class="result-badge" id="weeklyEventCount">0 条</span>
+        </div>
+        <div class="weekly-rail weekly-event-rail" id="weeklyEventRail"></div>
+      </section>
+    </main>
+
+    <script src="/weekly.js?v=20260723-weekly-auto-capture-all"></script>
+  </body>
+</html>

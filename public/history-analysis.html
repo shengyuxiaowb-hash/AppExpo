@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AppExpo 历史分析</title>
+    <script>
+      document.documentElement.dataset.theme = localStorage.getItem("appexpo-theme") || "light";
+    </script>
+    <link rel="stylesheet" href="/styles.css?v=20260715-history-analysis-v8">
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">APPLE STORE PLACEMENT ANALYZER</p>
+          <h1>AppExpo 历史分析</h1>
+          <div class="page-switch">
+            <a class="page-link" href="/">实时分析</a>
+            <a class="page-link" href="/sync.html">本地同步</a>
+            <a class="page-link" href="/history.html">历史记录</a>
+            <a class="page-link active" href="/history-analysis.html">历史分析</a>
+            <a class="page-link" href="/weekly.html">每周一更</a>
+          </div>
+        </div>
+        <div class="topbar-actions">
+          <button class="theme-toggle" id="themeToggle" type="button" aria-label="切换黑夜模式">
+            <span class="theme-option theme-light">白天</span>
+            <span class="theme-option theme-dark">黑夜</span>
+            <span class="theme-thumb" aria-hidden="true"></span>
+          </button>
+          <div class="status-pill">本地历史数据库</div>
+        </div>
+      </header>
+
+      <section class="control-panel history-analysis-panel">
+        <div class="history-analysis-toolbar">
+          <div class="field history-analysis-search-field">
+            <label>游戏搜索</label>
+            <div class="history-analysis-search-stack">
+              <div class="history-analysis-search-shell">
+                <input
+                  id="analysisGameInput"
+                  class="history-analysis-search-input"
+                  type="text"
+                  autocomplete="off"
+                  placeholder="输入 App ID 或游戏名后联想相关国家和游戏名称"
+                >
+                <button id="analysisGameClear" class="history-analysis-search-clear" type="button" aria-label="清空游戏名称">×</button>
+                <div class="game-menu history-analysis-search-menu" id="analysisGameMenu" hidden>
+                  <div class="history-analysis-search-tools" id="analysisGameTools"></div>
+                  <div class="game-list history-analysis-search-list" id="analysisGameList" role="listbox" aria-label="历史分析游戏列表"></div>
+                </div>
+              </div>
+              <small id="analysisGameHint" class="history-analysis-search-hint"></small>
+            </div>
+          </div>
+          <div class="field history-analysis-range-field">
+            <label>日期选择</label>
+            <div class="history-analysis-range-picker" id="analysisRangeQuick">
+              <button id="analysisRangeTrigger" class="history-analysis-range-trigger" type="button" aria-haspopup="listbox" aria-expanded="false">
+                <span>近 7 天</span>
+                <strong>按已有记录统计</strong>
+              </button>
+              <div class="game-menu history-analysis-range-menu" id="analysisRangeMenu" hidden>
+                <div class="game-list history-analysis-range-list" id="analysisRangeList" role="listbox" aria-label="历史分析日期范围"></div>
+              </div>
+            </div>
+          </div>
+          <div class="field history-analysis-search-button-field">
+            <label aria-hidden="true">&nbsp;</label>
+            <button id="analysisSearch" class="primary-button history-search-button" type="button">开始分析</button>
+          </div>
+        </div>
+        <input id="analysisStartDate" type="hidden">
+        <input id="analysisEndDate" type="hidden">
+      </section>
+
+      <section class="summary-strip history-analysis-summary-strip" aria-label="历史分析概览">
+        <div>
+          <span class="metric" id="analysisCountryCount">0</span>
+          <span class="metric-label">覆盖国家</span>
+        </div>
+        <div>
+          <span class="metric" id="analysisTodayCount">0</span>
+          <span class="metric-label">Today 展位</span>
+        </div>
+        <div>
+          <span class="metric" id="analysisGamesIconCount">0</span>
+          <span class="metric-label">Games · Icon</span>
+        </div>
+        <div>
+          <span class="metric" id="analysisGamesBannerCount">0</span>
+          <span class="metric-label">Games · Banner</span>
+        </div>
+      </section>
+
+      <section class="history-analysis-dashboard history-analysis-dashboard-single">
+        <article class="page-result history-analysis-chart-panel">
+          <div class="page-result-header">
+            <div>
+              <h2>国家排行</h2>
+              <p id="analysisTreeHint">按 Total / Today / Icon / Banner 横向对比国家命中。</p>
+            </div>
+          </div>
+          <div class="history-analysis-metric-bar">
+            <div class="history-analysis-metric-tabs" aria-label="国家排行分析维度">
+              <button class="history-analysis-metric-tab active" type="button" data-analysis-metric="total">Total</button>
+              <button class="history-analysis-metric-tab" type="button" data-analysis-metric="today">Today</button>
+              <button class="history-analysis-metric-tab" type="button" data-analysis-metric="icon">Icon</button>
+              <button class="history-analysis-metric-tab" type="button" data-analysis-metric="banner">Banner</button>
+            </div>
+          </div>
+          <div class="history-analysis-treemap" id="analysisTreemap"></div>
+        </article>
+      </section>
+    </main>
+    <div class="history-analysis-modal" id="analysisCustomModal" hidden>
+      <div class="history-analysis-modal-backdrop" data-analysis-custom-close="true"></div>
+      <section class="history-analysis-modal-card" role="dialog" aria-modal="true" aria-labelledby="analysisCustomTitle">
+        <div class="history-analysis-modal-head">
+          <div>
+            <h2 id="analysisCustomTitle">自定义日期</h2>
+            <p>选择要分析的历史记录日期范围。</p>
+          </div>
+          <button class="history-analysis-modal-close" type="button" data-analysis-custom-close="true" aria-label="关闭自定义日期">×</button>
+        </div>
+        <div class="history-analysis-modal-body">
+          <div class="history-analysis-date-fields">
+            <button class="history-analysis-date-control active" type="button" data-analysis-date-field="start">
+              <span>开始日期</span>
+              <strong id="analysisCustomStartLabel">-</strong>
+            </button>
+            <button class="history-analysis-date-control" type="button" data-analysis-date-field="end">
+              <span>结束日期</span>
+              <strong id="analysisCustomEndLabel">-</strong>
+            </button>
+          </div>
+          <input id="analysisCustomStart" type="hidden">
+          <input id="analysisCustomEnd" type="hidden">
+          <div class="history-analysis-calendar">
+            <div class="history-analysis-calendar-head">
+              <button type="button" data-analysis-calendar-nav="-1" aria-label="上个月">‹</button>
+              <strong id="analysisCalendarTitle"></strong>
+              <button type="button" data-analysis-calendar-nav="1" aria-label="下个月">›</button>
+            </div>
+            <div class="history-analysis-calendar-week" aria-hidden="true">
+              <span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span><span>日</span>
+            </div>
+            <div class="history-analysis-calendar-grid" id="analysisCalendarGrid"></div>
+          </div>
+        </div>
+        <div class="history-analysis-modal-actions">
+          <button class="ghost-button" type="button" data-analysis-custom-close="true">取消</button>
+          <button class="primary-button" id="analysisCustomApply" type="button">应用</button>
+        </div>
+      </section>
+    </div>
+    <div class="history-analysis-modal history-analysis-detail-modal" id="analysisDetailModal" hidden>
+      <div class="history-analysis-modal-backdrop" data-analysis-detail-close="true"></div>
+      <section class="history-analysis-modal-card history-analysis-detail-card" role="dialog" aria-modal="true" aria-labelledby="analysisDetailTitle">
+        <div class="history-analysis-modal-head">
+          <div>
+            <h2 id="analysisDetailTitle">国家命中详情</h2>
+            <p id="analysisDetailHint">按当前排行维度展示去重后的展位信息。</p>
+          </div>
+          <button class="history-analysis-modal-close" type="button" data-analysis-detail-close="true" aria-label="关闭国家命中详情">×</button>
+        </div>
+        <div class="history-analysis-detail-body" id="analysisDetailBody"></div>
+      </section>
+    </div>
+    <script src="/history-analysis.js?v=20260722-history-analysis-detail-image-kind"></script>
+  </body>
+</html>

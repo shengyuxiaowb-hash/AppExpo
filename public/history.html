@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AppExpo 历史记录</title>
+    <script>
+      document.documentElement.dataset.theme = localStorage.getItem("appexpo-theme") || "light";
+    </script>
+    <link rel="stylesheet" href="/styles.css?v=20260702-history">
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">APPLE STORE PLACEMENT ANALYZER</p>
+          <h1>AppExpo 历史记录</h1>
+          <div class="page-switch">
+            <a class="page-link" href="/">实时分析</a>
+            <a class="page-link" href="/sync.html">本地同步</a>
+            <a class="page-link active" href="/history.html">历史记录</a>
+            <a class="page-link" href="/history-analysis.html">历史分析</a>
+            <a class="page-link" href="/weekly.html">每周一更</a>
+          </div>
+        </div>
+        <div class="topbar-actions">
+          <button class="theme-toggle" id="themeToggle" type="button" aria-label="切换黑夜模式">
+            <span class="theme-option theme-light">白天</span>
+            <span class="theme-option theme-dark">黑夜</span>
+            <span class="theme-thumb" aria-hidden="true"></span>
+          </button>
+          <div class="status-pill">本地历史数据库</div>
+        </div>
+      </header>
+
+      <section class="control-panel history-panel">
+        <div class="history-filters">
+          <div class="history-filter-row history-filter-row-main">
+            <div class="field history-date-field">
+              <label>同步日期</label>
+              <div class="history-date-picker" id="historyDatePicker">
+                <div class="mini-picker">
+                  <button class="game-trigger date-trigger" id="historyYearTrigger" type="button" aria-haspopup="listbox" aria-expanded="false">
+                    <span>年份</span>
+                  </button>
+                  <div class="game-menu date-menu" id="historyYearMenu" hidden>
+                    <div class="game-list" id="historyYearList" role="listbox" aria-label="年份列表"></div>
+                  </div>
+                </div>
+                <div class="mini-picker">
+                  <button class="game-trigger date-trigger" id="historyMonthTrigger" type="button" aria-haspopup="listbox" aria-expanded="false">
+                    <span>月份</span>
+                  </button>
+                  <div class="game-menu date-menu" id="historyMonthMenu" hidden>
+                    <div class="game-list" id="historyMonthList" role="listbox" aria-label="月份列表"></div>
+                  </div>
+                </div>
+                <div class="mini-picker">
+                  <button class="game-trigger date-trigger" id="historyDayTrigger" type="button" aria-haspopup="listbox" aria-expanded="false">
+                    <span>日期</span>
+                  </button>
+                  <div class="game-menu date-menu" id="historyDayMenu" hidden>
+                    <div class="game-list" id="historyDayList" role="listbox" aria-label="日期列表"></div>
+                  </div>
+                </div>
+                <button id="historyDateClear" class="ghost-button" type="button">清空</button>
+              </div>
+            </div>
+            <div class="field history-game-field" id="historyGameField">
+              <label>游戏名称</label>
+              <div class="history-game-search-row">
+                <div class="country-picker history-game-picker">
+                  <button class="game-trigger" id="historyGameTrigger" type="button" aria-haspopup="listbox" aria-expanded="false">
+                    <span>全部游戏</span>
+                  </button>
+                  <div class="game-menu country-menu history-game-menu" id="historyGameMenu" hidden>
+                    <div class="history-game-filter-wrap">
+                      <input
+                        id="historyGameFilterInput"
+                        class="history-game-filter-input"
+                        type="text"
+                        autocomplete="off"
+                        placeholder="输入游戏名称搜索"
+                      >
+                    </div>
+                    <div class="game-list" id="historyGameList" role="listbox" aria-label="历史游戏列表"></div>
+                  </div>
+                </div>
+                <div class="history-appid-wrap">
+                  <small id="historyAppIdHint" class="history-appid-hint"></small>
+                  <input id="historyAppIdInput" class="history-appid-input" type="text" inputmode="numeric" placeholder="App ID 留空为全部">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="history-filter-row history-filter-row-actions">
+            <div class="field history-country-field" id="historyCountryField">
+              <label>国家筛选</label>
+              <div class="country-picker history-country-picker">
+                <button class="game-trigger" id="historyCountryTrigger" type="button" aria-haspopup="listbox" aria-expanded="false">
+                  <span>全部国家</span>
+                </button>
+                <div class="game-menu country-menu" id="historyCountryMenu" hidden>
+                  <div class="game-list" id="historyCountryList" role="listbox" aria-label="历史国家列表"></div>
+                </div>
+              </div>
+            </div>
+            <div class="field history-page-field">
+              <label>页面范围</label>
+              <div class="segmented compact-segmented" id="historyPageType">
+                <label><input type="radio" name="historyPageType" value="" checked>全部</label>
+                <label><input type="radio" name="historyPageType" value="today">Today</label>
+                <label><input type="radio" name="historyPageType" value="games">Games</label>
+              </div>
+            </div>
+            <div class="field history-search-field">
+              <label aria-hidden="true">&nbsp;</label>
+              <button id="historySearch" class="primary-button history-search-button" type="button">查询历史</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="summary-strip" aria-label="历史概览">
+        <div>
+          <span class="metric" id="historyRunCount">0</span>
+          <span class="metric-label">同步天数</span>
+        </div>
+        <div>
+          <span class="metric" id="historyMatchCount">0</span>
+          <span class="metric-label">命中展位</span>
+        </div>
+        <div>
+          <span class="metric" id="historyCountryCount">0</span>
+          <span class="metric-label">涉及国家</span>
+        </div>
+      </section>
+
+      <section class="history-layout">
+        <aside class="page-result history-sidebar">
+          <div class="page-result-header">
+            <div>
+              <h2>国家分布</h2>
+            </div>
+            <span class="result-badge" id="historyRunBadge">0 条</span>
+          </div>
+          <div class="history-run-list" id="historyRunList"></div>
+        </aside>
+
+        <section class="results" id="historyResults">
+          <div class="empty-state">选择游戏、日期或国家后，这里会展示对应的历史展位结果。</div>
+        </section>
+      </section>
+    </main>
+    <script src="/history.js?v=20260702-history"></script>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+node_modules/
+.DS_Store
+evidence/*.png
+
+# Local runtime data. Each computer keeps its own database and logs.
+data/*.db
+!data/appexpo_local.shared.db
+data/*.db-*
+data/*.bak_*
+data/*.backup-*.db
+data/*.before-delete-*.db
+data/*.log
+data/fetched/
+*.log
+*.pid
+__pycache__/
+*.pyc

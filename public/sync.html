@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AppExpo 本地同步</title>
+    <script>
+      document.documentElement.dataset.theme = localStorage.getItem("appexpo-theme") || "light";
+    </script>
+    <link rel="stylesheet" href="/styles.css?v=20260715-sync">
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">APPLE STORE PLACEMENT ANALYZER</p>
+          <h1>AppExpo 本地同步</h1>
+          <div class="page-switch">
+            <a class="page-link" href="/">实时分析</a>
+            <a class="page-link active" href="/sync.html">本地同步</a>
+            <a class="page-link" href="/history.html">历史记录</a>
+            <a class="page-link" href="/history-analysis.html">历史分析</a>
+            <a class="page-link" href="/weekly.html">每周一更</a>
+          </div>
+        </div>
+        <div class="topbar-actions">
+          <button class="theme-toggle" id="themeToggle" type="button" aria-label="切换黑夜模式">
+            <span class="theme-option theme-light">白天</span>
+            <span class="theme-option theme-dark">黑夜</span>
+            <span class="theme-thumb" aria-hidden="true"></span>
+          </button>
+          <div class="status-pill">本地自动同步任务</div>
+        </div>
+      </header>
+
+      <section class="control-panel sync-panel">
+        <div class="sync-panel-header">
+          <div>
+            <h2>本地同步</h2>
+            <p>按设定频率自动巡检各国家 Today / Games 展位，并写入本地历史记录。</p>
+          </div>
+          <span class="sync-state-pill" id="schedulerStatePill">未启动</span>
+        </div>
+
+        <div class="sync-panel-body">
+          <div class="field sync-field-main">
+            <div class="label-row">
+              <label for="schedulerInterval">同步频率</label>
+            </div>
+            <div class="scheduler-row">
+              <div class="country-picker scheduler-picker">
+                <select id="schedulerInterval" hidden aria-hidden="true">
+                  <option value="30">每 30 分钟</option>
+                  <option value="60">每 1 小时</option>
+                  <option value="120" selected>每 2 小时</option>
+                  <option value="360">每 6 小时</option>
+                  <option value="720">每 12 小时</option>
+                  <option value="1440">每 24 小时</option>
+                </select>
+                <button class="game-trigger" id="schedulerTrigger" type="button" aria-haspopup="listbox" aria-expanded="false">
+                  <span>每 2 小时</span>
+                </button>
+                <div class="game-menu country-menu" id="schedulerMenu" hidden>
+                  <div class="game-list" id="schedulerList" role="listbox" aria-label="定时间隔列表"></div>
+                </div>
+              </div>
+              <button id="schedulerToggle" class="primary-button secondary-action" type="button">启动定时</button>
+              <button id="schedulerRunOnce" class="primary-button scheduler-once" type="button">立即执行</button>
+            </div>
+            <p class="sync-inline-hint" id="schedulerHint">未启动</p>
+          </div>
+
+          <div class="sync-dashboard" aria-label="同步概览">
+            <div class="sync-dashboard-card sync-dashboard-primary">
+              <span class="sync-dashboard-label">当前状态</span>
+              <strong class="sync-dashboard-value" id="schedulerSummaryStatus">未启动</strong>
+            </div>
+            <div class="sync-dashboard-card">
+              <span class="sync-dashboard-label">下次执行</span>
+              <strong class="sync-dashboard-value sync-dashboard-value-secondary" id="schedulerSummaryNext">未安排</strong>
+            </div>
+            <div class="sync-dashboard-card">
+              <span class="sync-dashboard-label">最近完成</span>
+              <strong class="sync-dashboard-value sync-dashboard-value-secondary" id="schedulerSummaryLast">未执行</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="progress-area sync-progress-area" id="schedulerProgressArea" hidden>
+        <div class="sync-progress-copy">
+          <strong id="schedulerProgressTitle">同步执行中</strong>
+          <span id="schedulerProgressText">正在准备同步任务...</span>
+        </div>
+        <div class="progress-bar" aria-hidden="true"><span></span></div>
+        <div class="sync-progress-log" id="schedulerProgressLog" hidden></div>
+      </section>
+    </main>
+
+    <script src="/sync.js?v=20260717-sync-state-fix"></script>
+  </body>
+</html>

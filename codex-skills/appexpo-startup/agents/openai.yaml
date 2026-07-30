@@ -1,0 +1,4 @@
+interface:
+  display_name: "AppExpo Startup"
+  short_description: "Start and troubleshoot the AppExpo local app"
+  default_prompt: "Use $appexpo-startup to start the AppExpo project on this MacBook."
