@@ -194,23 +194,29 @@ Games 接口中部分榜单节点只返回 App ID 和 href，例如：
 data/appexpo_local.db
 ```
 
-GitHub 中可带一个可选共享数据库快照：
+GitHub 中同步的数据库也使用同名文件：
 
 ```text
-data/appexpo_local.shared.db
+data/appexpo_local.db
 ```
 
-其他电脑如果只想更新代码，直接 `git pull` 后启动项目即可，不需要处理数据库。如果需要使用主电脑上传的共享数据库，先关闭项目，再执行：
-
-```bash
-cp data/appexpo_local.shared.db data/appexpo_local.db
-python3 server.py
-```
-
-注意：这会替换当前电脑自己的本地历史库。若本机已有重要历史数据，替换前先备份：
+其他电脑首次拉取后可以直接启动项目。如果某台电脑不想使用 GitHub 上的数据库，而是保留自己的本地历史库，替换或拉取前先备份：
 
 ```bash
 cp data/appexpo_local.db data/appexpo_local.mybackup.db
+```
+
+如果后续只想更新代码，不想让 Git 更新本机数据库，可以在该电脑执行：
+
+```bash
+git update-index --skip-worktree data/appexpo_local.db
+```
+
+需要重新接收 GitHub 数据库更新时，再执行：
+
+```bash
+git update-index --no-skip-worktree data/appexpo_local.db
+git pull
 ```
 
 SQLite 运行时可能生成：

@@ -4,7 +4,7 @@ evidence/*.png
 
 # Local runtime data. Each computer keeps its own database and logs.
 data/*.db
-!data/appexpo_local.shared.db
+!data/appexpo_local.db
 data/*.db-*
 data/*.bak_*
 data/*.backup-*.db
