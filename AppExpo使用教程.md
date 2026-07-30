@@ -11,7 +11,7 @@ AppExpo 是一个用于查看 Apple Store 展位、同步本地历史记录、�
 首次安装时，直接把下面这一整段发给 Codex：
 
 ```text
-安装项目。
+安装项目AppExpo
 
 仓库地址：git@github.com:shengyuxiaowb-hash/AppExpo.git
 请拉取到：~/Desktop/AppExpo
