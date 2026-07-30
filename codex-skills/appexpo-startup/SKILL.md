@@ -9,6 +9,8 @@ description: Start, stop, verify, and troubleshoot the local AppExpo project on 
 
 - `启动项目`: start AppExpo and provide `http://localhost:4173`.
 - `关闭项目`: stop the AppExpo process listening on port `4173`.
+- `更新项目`: update project code/files from GitHub, but preserve the current computer's `data/appexpo_local.db`.
+- `更新数据库`: replace the current computer's `data/appexpo_local.db` with the database version from GitHub.
 
 ## Goal
 
@@ -29,6 +31,8 @@ If the user only asks to start or use the project, do not edit business code.
 - If unrelated user changes exist, leave them alone.
 - `appexpo_server.pid` is only a stale helper file when it does not match the current listener PID; it is not required for startup.
 - Keep `CODEX_START_HERE.md` and `codex-skills/appexpo-startup/` when handing the folder to another Codex.
+- For `更新项目`, preserve the local database even if GitHub also contains `data/appexpo_local.db`.
+- For `更新数据库`, stop the server first, back up the existing local database, then replace only `data/appexpo_local.db`.
 
 ## Startup Workflow
 
@@ -92,6 +96,72 @@ npm start
 ```
 
 If npm is missing, use `python3 server.py`; npm is not required for basic startup.
+
+## GitHub Install And Update
+
+This project is designed so the main computer pushes updates to GitHub and other computers pull from GitHub.
+
+Repository:
+
+```text
+git@github.com:shengyuxiaowb-hash/AppExpo.git
+```
+
+If the project is not present on a new MacBook, install it with:
+
+```bash
+cd ~/Desktop
+git clone git@github.com:shengyuxiaowb-hash/AppExpo.git AppExpo
+cd AppExpo
+python3 server.py
+```
+
+### 用户指令：更新项目
+
+Meaning: update code, pages, scripts, docs, and skill files from GitHub, but do **not** overwrite this computer's database.
+
+Run from the project root:
+
+```bash
+db_keep="/tmp/appexpo_local.keep.$(date +%Y%m%d_%H%M%S).db"
+[ -f data/appexpo_local.db ] && cp data/appexpo_local.db "$db_keep"
+git fetch origin main
+git reset --hard origin/main
+[ -f "$db_keep" ] && cp "$db_keep" data/appexpo_local.db
+git update-index --skip-worktree data/appexpo_local.db || true
+```
+
+Then start normally:
+
+```bash
+python3 server.py
+```
+
+Do not delete `data/appexpo_local.db-wal` or `data/appexpo_local.db-shm` while the server is running. If the server was stopped before update, stale WAL/SHM files may be removed only when replacing the database, not during `更新项目`.
+
+### 用户指令：更新数据库
+
+Meaning: keep project code as-is, but replace the current local database with the GitHub database.
+
+Stop the server first. Then run from the project root:
+
+```bash
+db_backup="data/appexpo_local.localbackup-$(date +%Y%m%d_%H%M%S).db"
+[ -f data/appexpo_local.db ] && cp data/appexpo_local.db "$db_backup"
+git update-index --no-skip-worktree data/appexpo_local.db || true
+git fetch origin main
+git checkout origin/main -- data/appexpo_local.db
+rm -f data/appexpo_local.db-wal data/appexpo_local.db-shm
+git update-index --skip-worktree data/appexpo_local.db || true
+```
+
+Then start normally:
+
+```bash
+python3 server.py
+```
+
+Tell the user where the backup was saved.
 
 ## Common Fixes
 

@@ -45,6 +45,51 @@ npm start
 
 `npm start` 会运行 `scripts/dev_runner.py`，监听文件变化并自动重启服务。
 
+## GitHub 安装和更新
+
+项目仓库：
+
+```text
+git@github.com:shengyuxiaowb-hash/AppExpo.git
+```
+
+新电脑首次安装：
+
+```bash
+cd ~/Desktop
+git clone git@github.com:shengyuxiaowb-hash/AppExpo.git AppExpo
+cd AppExpo
+python3 server.py
+```
+
+后续其他电脑推荐直接让 Codex 执行下面两个指令。
+
+### 更新项目
+
+只更新项目代码、页面、脚本、文档和 skill，不覆盖当前电脑的数据库。
+
+```text
+更新项目
+```
+
+Codex 会保护当前本机数据库，再从 GitHub 覆盖项目文件。适合日常更新功能和修复问题。
+
+### 更新数据库
+
+只用 GitHub 上的数据库覆盖当前电脑的数据库。
+
+```text
+更新数据库
+```
+
+Codex 会先备份当前本地数据库，再替换 `data/appexpo_local.db`。适合需要同步主电脑历史数据时使用。
+
+普通规则：
+
+- 主电脑负责修改、提交、推送。
+- 其他电脑平时只执行 `更新项目`。
+- 只有明确需要主电脑数据库时，才执行 `更新数据库`。
+
 ## 关闭项目
 
 在运行服务的终端按：
@@ -200,23 +245,27 @@ GitHub 中同步的数据库也使用同名文件：
 data/appexpo_local.db
 ```
 
-其他电脑首次拉取后可以直接启动项目。如果某台电脑不想使用 GitHub 上的数据库，而是保留自己的本地历史库，替换或拉取前先备份：
+其他电脑首次拉取后可以直接启动项目。如果某台电脑不想使用 GitHub 上的数据库，而是保留自己的本地历史库，更新前先备份：
 
 ```bash
 cp data/appexpo_local.db data/appexpo_local.mybackup.db
 ```
 
-如果后续只想更新代码，不想让 Git 更新本机数据库，可以在该电脑执行：
+如果后续只想更新代码，不想让 Git 更新本机数据库，可以让 Codex 执行 `更新项目`，或手动在该电脑执行：
 
 ```bash
 git update-index --skip-worktree data/appexpo_local.db
 ```
 
-需要重新接收 GitHub 数据库更新时，再执行：
+需要重新接收 GitHub 数据库更新时，可以让 Codex 执行 `更新数据库`，或手动执行：
 
 ```bash
+cp data/appexpo_local.db data/appexpo_local.mybackup-$(date +%Y%m%d_%H%M%S).db
 git update-index --no-skip-worktree data/appexpo_local.db
-git pull
+git fetch origin main
+git checkout origin/main -- data/appexpo_local.db
+rm -f data/appexpo_local.db-wal data/appexpo_local.db-shm
+git update-index --skip-worktree data/appexpo_local.db
 ```
 
 SQLite 运行时可能生成：
@@ -269,9 +318,16 @@ git push
 
 其他电脑拉取更新：
 
-```bash
-git pull
-python3 server.py
+```text
+更新项目
+启动项目
+```
+
+其他电脑单独更新数据库：
+
+```text
+更新数据库
+启动项目
 ```
 
 ## 项目结构
